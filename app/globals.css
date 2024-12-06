@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #1e1e1e;
+  --text-main: rgba(255, 255, 255, 0.75);
+  --text-medium: rgba(255, 255, 255, 0.5);
+  --text-light: rgba(255, 255, 255, 0.25);
+  --text-ultralight: rgba(255, 255, 255, 0.15);
+  --primary: 67, 87, 236;
+}
+
+body {
+  color: var(--text-medium);
+  background: var(--background);
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+/*            */
+/* Animations */
+/*            */
+/* Add this CSS to your global or component-specific CSS file */
+/* Global Styles */
+.rain-card {
+  position: absolute;
+  opacity: 0.8;
+  transform-origin: center;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
