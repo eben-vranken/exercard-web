@@ -3,39 +3,60 @@
 import { useEffect, useState } from 'react';
 import ReactGA from "react-ga4";
 
+declare global {
+    interface Window {
+        [
+        key: `ga-disable-${string}`]: boolean;
+    }
+}
+
 export default function CookieConsentModal() {
     const [isOpen, setIsOpen] = useState(true);
 
+    // Disable GA tracking by default
     useEffect(() => {
-        // Check if the user has already accepted or declined cookies
+        const token = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TOKEN;
+
+        if (token) {
+            window[`ga-disable-${token}`] = true; // Prevent tracking initially
+            ReactGA.initialize(token);
+        }
+
         const cookiesAccepted = localStorage.getItem('cookiesAccepted');
         const cookiesDeclined = localStorage.getItem('cookiesDeclined');
 
         if (cookiesAccepted) {
-            setIsOpen(false); // Hide modal if cookies are accepted
-            loadGoogleAnalytics(); // Load GA if cookies were accepted
+            setIsOpen(false);
+            enableGoogleAnalytics();
         } else if (cookiesDeclined) {
-            setIsOpen(false); // Hide modal if cookies are declined
+            setIsOpen(false);
         }
     }, []);
 
     const handleAccept = () => {
         localStorage.setItem('cookiesAccepted', 'true');
         setIsOpen(false);
-        loadGoogleAnalytics();
+        enableGoogleAnalytics();
     };
 
     const handleDecline = () => {
         localStorage.setItem('cookiesDeclined', 'true');
         setIsOpen(false);
+        disableGoogleAnalytics();
     };
 
-    const loadGoogleAnalytics = () => {
-        const token = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TOKEN
+    const enableGoogleAnalytics = () => {
+        const token = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TOKEN;
 
         if (token) {
-            ReactGA.initialize(token);
+            window[`ga-disable-${token}`] = false; // Re-enable tracking
+            ReactGA.send({ hitType: "pageview", page: window.location.pathname });
         }
+    };
+
+    const disableGoogleAnalytics = () => {
+        const token = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TOKEN;
+        if (token) window[`ga-disable-${token}`] = true;
     };
 
     if (!isOpen) return null;
