@@ -4,10 +4,10 @@ import { BlogPost } from "@/app/layout";
 import { notFound } from "next/navigation";
 
 interface PostPageProps {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }
 
-export default async function PostPage({ params }: PostPageProps) {
+const PostPage: React.FC<PostPageProps> = async ({ params }) => {
     const { slug } = await params;
 
     const filePath = join(process.cwd(), "data", "blogposts.json");
@@ -35,3 +35,5 @@ export default async function PostPage({ params }: PostPageProps) {
         </main>
     );
 }
+
+export default PostPage;
