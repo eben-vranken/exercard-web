@@ -33,7 +33,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} w-full flex flex-col items-center antialiased h-screen p-5`}
       >
-        <section className="w-full lg:w-1/2">
+        <section className="w-full md:w-2/3 lg:w-1/2 2xl:w-1/3">
           <Navbar />
 
           {children}
