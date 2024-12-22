@@ -17,9 +17,13 @@ interface CookieConsentClientProps {
 
 export default function CookieConsentClient({ analyticsToken, accepted }: CookieConsentClientProps) {
     useEffect(() => {
-        if (analyticsToken) {
+        if (analyticsToken && !accepted) {
             window[`ga-disable-${analyticsToken}`] = true; // Prevent tracking initially
             ReactGA.initialize(analyticsToken);
+        }
+
+        if (accepted) {
+            enableGoogleAnalytics();
         }
     }, [analyticsToken]);
 
