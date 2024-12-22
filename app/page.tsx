@@ -1,14 +1,25 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 import BlogpostList from "@/components/blog/BlogpostList";
-import RainingCards, { generateCards } from "@/components/UI/animated/RainingCards";
+import RainingCards from "@/components/UI/animated/RainingCards";
 
 export default async function Home() {
   const filePath = join(process.cwd(), "data", "blogposts.json");
   const fileContents = readFileSync(filePath, "utf-8");
   const posts = JSON.parse(fileContents);
 
-  // Generate the cards data server-side
+  const generateCards = (cardCount: number) => {
+    return Array.from({ length: cardCount }, (_, index) => ({
+      id: index,
+      position: {
+        top: `${Math.random() * -10}vh`,
+        left: `${Math.random() * 100}vw`,
+      },
+      animationDelay: `${Math.random() * 5}s`,
+      animationDuration: `${Math.random() * (12 - 8) + 8}s`,
+    }));
+  };
+
   const cards = generateCards(10);
 
   return (
@@ -17,7 +28,7 @@ export default async function Home() {
         <BlogpostList posts={posts} />
       </section>
 
-      <RainingCards cardCount={10} cards={cards} />
+      <RainingCards cards={cards} />
     </section>
   );
 }
