@@ -1,10 +1,10 @@
 [
     {
         "id": "1",
-        "title": "Hello World! 🌍✨",
-        "content": "<p>Welcome to Exercard! This is a free, open-source flashcard app designed to make learning more efficient with personalized spaced repetition. With AI-powered features and cross-platform support, Exercard helps you study smarter and retain information better.<br><br> Stay tuned for more updates and a merry christmas! 🎄🎁</p> <figure><video width='500' poster='/blogpost/review_showcase_thumbnail.png' controls><source src='/blogpost/video/review_showcase.mp4' type='video/mp4'></video><figcaption>Exercard review showcase - Learn smarter with personalized spaced repetition.</figcaption></figure>",
+        "title": "Hello World!",
+        "content": "<p>Introducing Exercard! This is a free, open-source flashcard app designed to make learning more efficient with personalized spaced repetition. With AI-powered features and cross-platform support, Exercard helps you study smarter and retain information better.<br><br> Stay tuned for more updates and a Merry Christmas! 🎄🎁</p> <figure><video width='500' poster='/blogpost/review_showcase_thumbnail.png' controls><source src='/blogpost/video/review_showcase.mp4' type='video/mp4'></video><figcaption>Exercard review showcase - Learn smarter with personalized spaced repetition.</figcaption></figure>",
         "date": "22-12-2024",
         "slug": "hello-world",
-        "excerpt": "What is the meaning of life? The answer is 42. 🤔"
+        "excerpt": "Who, What, Why. Merry Christmas 🎄🎁"
     }
 ]
