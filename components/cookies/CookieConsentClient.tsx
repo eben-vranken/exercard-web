@@ -25,7 +25,7 @@ export default function CookieConsentClient({ analyticsToken, accepted }: Cookie
         if (accepted) {
             enableGoogleAnalytics();
         }
-    }, [analyticsToken]);
+    }, [analyticsToken, accepted]);
 
     const handleAccept = () => {
         setCookie('cookiesAccepted', 'true', { maxAge: 365 * 24 * 60 * 60 }); // 1 year
