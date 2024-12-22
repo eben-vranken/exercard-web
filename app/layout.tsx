@@ -23,12 +23,6 @@ export interface BlogPost {
   excerpt: string;
 }
 
-/** @type {import('next-sitemap').IConfig} */
-module.exports = {
-  siteUrl: process.env.SITE_URL || 'http://localhost:3000',
-  generateRobotsTxt: true,
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
