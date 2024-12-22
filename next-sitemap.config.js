@@ -5,7 +5,6 @@ module.exports = {
   robotsTxtOptions: {
     policies: [
       { userAgent: '*', allow: '/' },
-      { userAgent: '*', disallow: '/admin' },
     ],
   },
   additionalPaths: async (config) => {
