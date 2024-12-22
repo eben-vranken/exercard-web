@@ -19,11 +19,11 @@ module.exports = {
     }));
 
     return [
-      ...blogPostPaths,
       {
         loc: '/blog/',
         lastmod: new Date().toISOString(),
       },
+      ...blogPostPaths,
     ];
   },
 };
