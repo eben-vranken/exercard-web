@@ -1,0 +1,10 @@
+[
+    {
+        "id": "1",
+        "title": "Hello World!",
+        "content": "<p>Welcome to Exercard! This is a free, open-source flashcard app designed to make learning more efficient with personalized spaced repetition. With AI-powered features and cross-platform support, Exercard helps you study smarter and retain information better.<br><br> Stay tuned for more updates!</p>",
+        "date": "22-12-2024",
+        "slug": "hello-world",
+        "excerpt": "What is the meaning of life? The answer is 42."
+    }
+]

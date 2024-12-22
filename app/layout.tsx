@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+import type { GetServerSideProps, Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import useGetAllBlogPosts from "@/hooks/useGetAllBlogPosts";
+import Navbar from "@/components/UI/Navbar";
 
 const inter = localFont({
   src: "./fonts/Inter.ttf",
@@ -13,6 +15,15 @@ export const metadata: Metadata = {
   description: "Open-Source SRS flashcards with local AI, free, forever.",
 };
 
+export interface BlogPost {
+  id: string;
+  title: string;
+  content: string;
+  date: string;
+  slug: string;
+  excerpt: string;
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,8 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased h-screen`}
+        className={`${inter.variable} antialiased h-screen p-5`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

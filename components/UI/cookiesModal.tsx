@@ -5,15 +5,13 @@ import ReactGA from "react-ga4";
 
 declare global {
     interface Window {
-        [
-        key: `ga-disable-${string}`]: boolean;
+        [key: `ga-disable-${string}`]: boolean;
     }
 }
 
 export default function CookieConsentModal() {
     const [isOpen, setIsOpen] = useState(true);
 
-    // Disable GA tracking by default
     useEffect(() => {
         const token = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TOKEN;
 
@@ -47,7 +45,6 @@ export default function CookieConsentModal() {
 
     const enableGoogleAnalytics = () => {
         const token = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TOKEN;
-
         if (token) {
             window[`ga-disable-${token}`] = false; // Re-enable tracking
             ReactGA.send({ hitType: "pageview", page: window.location.pathname });
@@ -67,16 +64,10 @@ export default function CookieConsentModal() {
                 This site uses cookies to improve your experience. By accepting, you allow Google Analytics to track your activity.
             </p>
             <section className="flex gap-x-4">
-                <button
-                    onClick={handleAccept}
-                    className="px-4 py-2 bg-primary text-white rounded hover:opacity-75"
-                >
+                <button onClick={handleAccept} className="bg-green-500 text-white px-4 py-2 rounded">
                     Accept
                 </button>
-                <button
-                    onClick={handleDecline}
-                    className="px-4 py-2 bg-gray-600 text-white rounded hover:opacity-75"
-                >
+                <button onClick={handleDecline} className="bg-red-500 text-white px-4 py-2 rounded">
                     Decline
                 </button>
             </section>
