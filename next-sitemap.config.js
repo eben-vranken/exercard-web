@@ -13,9 +13,17 @@ module.exports = {
     const blogPostsPath = path.join(process.cwd(), 'data', 'blogposts.json');
     const blogPosts = JSON.parse(fs.readFileSync(blogPostsPath, 'utf-8'));
 
-    return blogPosts.map((post) => ({
+    const blogPostPaths = blogPosts.map((post) => ({
       loc: `/blog/${post.slug}`,
       lastmod: new Date().toISOString(),
     }));
+
+    return [
+      ...blogPostPaths,
+      {
+        loc: '/blog/',
+        lastmod: new Date().toISOString(),
+      },
+    ];
   },
 };
