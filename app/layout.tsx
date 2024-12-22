@@ -11,7 +11,7 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Exercard",
+  title: "Exercard - Open-Source SRS Flashcards with Local AI",
   description: "Open-Source SRS flashcards with local AI, free, forever.",
 };
 
@@ -32,14 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} w-full flex flex-col items-center antialiased h-screen p-5`}
+        className={`${inter.variable} absolute left-1/2 -translate-x-1/2 flex w-full md:w-2/3 lg:w-1/2 2xl:w-1/3 flex-col items-center antialiased h-screen p-5`}
       >
-        <section className="w-full md:w-2/3 lg:w-1/2 2xl:w-1/3">
-          <Navbar />
-          {children}
+        <Navbar />
+        {children}
 
-          <CookieConsent />
-        </section>
+        <CookieConsent />
       </body>
     </html>
   );
