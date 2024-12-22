@@ -12,9 +12,10 @@ declare global {
 
 interface CookieConsentClientProps {
     analyticsToken?: string;
+    accepted?: boolean;
 }
 
-export default function CookieConsentClient({ analyticsToken }: CookieConsentClientProps) {
+export default function CookieConsentClient({ analyticsToken, accepted }: CookieConsentClientProps) {
     useEffect(() => {
         if (analyticsToken) {
             window[`ga-disable-${analyticsToken}`] = true; // Prevent tracking initially
@@ -25,13 +26,13 @@ export default function CookieConsentClient({ analyticsToken }: CookieConsentCli
     const handleAccept = () => {
         setCookie('cookiesAccepted', 'true', { maxAge: 365 * 24 * 60 * 60 }); // 1 year
         enableGoogleAnalytics();
-        window.location.reload(); // Reload to update server component
+        window.location.reload();
     };
 
     const handleDecline = () => {
         setCookie('cookiesDeclined', 'true', { maxAge: 365 * 24 * 60 * 60 }); // 1 year
         disableGoogleAnalytics();
-        window.location.reload(); // Reload to update server component
+        window.location.reload();
     };
 
     const enableGoogleAnalytics = () => {
@@ -48,7 +49,7 @@ export default function CookieConsentClient({ analyticsToken }: CookieConsentCli
     };
 
     return (
-        <section className="fixed bottom-3 rounded-lg left-1/2 -translate-x-1/2 right-0 w-fit bg-background border border-white/5 text-white p-4 flex justify-between items-center z-50 flex-col gap-y-3">
+        <section className={`fixed bottom-3 rounded-lg left-1/2 -translate-x-1/2 right-0 w-fit bg-background border border-white/5 text-white p-4 flex justify-between items-center z-50 flex-col gap-y-3 ${accepted ? 'hidden' : 'flex'}`}>
             <p className="text-sm text-light">
                 This site uses cookies to improve your experience. By accepting, you allow Google Analytics to track your activity.
             </p>

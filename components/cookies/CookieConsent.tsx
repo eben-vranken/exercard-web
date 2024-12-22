@@ -6,12 +6,11 @@ export default async function CookieConsent() {
     const cookiesAccepted = cookieStore.get('cookiesAccepted');
     const cookiesDeclined = cookieStore.get('cookiesDeclined');
 
-    // If either cookie exists, don't show the modal
-    if (cookiesAccepted || cookiesDeclined) {
+    if (cookiesDeclined) {
         return null;
     }
 
     const analyticsToken = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TOKEN;
 
-    return <CookieConsentClient analyticsToken={analyticsToken} />;
+    return <CookieConsentClient analyticsToken={analyticsToken} accepted={cookiesAccepted != null ? true : false} />;
 }
