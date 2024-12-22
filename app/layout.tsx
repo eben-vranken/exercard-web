@@ -31,10 +31,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased h-screen p-5`}
+        className={`${inter.variable} w-full flex flex-col items-center antialiased h-screen p-5`}
       >
-        <Navbar />
-        {children}
+        <section className="w-full lg:w-1/2">
+          <Navbar />
+
+          {children}
+        </section>
       </body>
     </html>
   );
