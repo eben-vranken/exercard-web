@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/UI/Navbar";
-import ClientWrapper from "@/components/UI/ClientCookiesModalWrapper";
+import CookieConsent from "@/components/cookies/CookieConsent";
 
 const inter = localFont({
   src: "./fonts/Inter.ttf",
@@ -38,7 +38,7 @@ export default function RootLayout({
           <Navbar />
           {children}
 
-          <ClientWrapper />
+          <CookieConsent />
         </section>
       </body>
     </html>

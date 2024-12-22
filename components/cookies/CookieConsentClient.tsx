@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import ReactGA from "react-ga4";
+import { useEffect } from 'react';
+import ReactGA from 'react-ga4';
+import { setCookie } from 'cookies-next';
 
 declare global {
     interface Window {
@@ -9,54 +10,42 @@ declare global {
     }
 }
 
-export default function CookieConsentModal() {
-    const [isOpen, setIsOpen] = useState(true);
+interface CookieConsentClientProps {
+    analyticsToken?: string;
+}
 
+export default function CookieConsentClient({ analyticsToken }: CookieConsentClientProps) {
     useEffect(() => {
-        const token = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TOKEN;
-
-        if (token) {
-            window[`ga-disable-${token}`] = true; // Prevent tracking initially
-            ReactGA.initialize(token);
+        if (analyticsToken) {
+            window[`ga-disable-${analyticsToken}`] = true; // Prevent tracking initially
+            ReactGA.initialize(analyticsToken);
         }
-
-        const cookiesAccepted = localStorage.getItem('cookiesAccepted');
-        const cookiesDeclined = localStorage.getItem('cookiesDeclined');
-
-        if (cookiesAccepted) {
-            setIsOpen(false);
-            enableGoogleAnalytics();
-        } else if (cookiesDeclined) {
-            setIsOpen(false);
-        }
-    }, []);
+    }, [analyticsToken]);
 
     const handleAccept = () => {
-        localStorage.setItem('cookiesAccepted', 'true');
-        setIsOpen(false);
+        setCookie('cookiesAccepted', 'true', { maxAge: 365 * 24 * 60 * 60 }); // 1 year
         enableGoogleAnalytics();
+        window.location.reload(); // Reload to update server component
     };
 
     const handleDecline = () => {
-        localStorage.setItem('cookiesDeclined', 'true');
-        setIsOpen(false);
+        setCookie('cookiesDeclined', 'true', { maxAge: 365 * 24 * 60 * 60 }); // 1 year
         disableGoogleAnalytics();
+        window.location.reload(); // Reload to update server component
     };
 
     const enableGoogleAnalytics = () => {
-        const token = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TOKEN;
-        if (token) {
-            window[`ga-disable-${token}`] = false; // Re-enable tracking
+        if (analyticsToken) {
+            window[`ga-disable-${analyticsToken}`] = false;
             ReactGA.send({ hitType: "pageview", page: window.location.pathname });
         }
     };
 
     const disableGoogleAnalytics = () => {
-        const token = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TOKEN;
-        if (token) window[`ga-disable-${token}`] = true;
+        if (analyticsToken) {
+            window[`ga-disable-${analyticsToken}`] = true;
+        }
     };
-
-    if (!isOpen) return null;
 
     return (
         <section className="fixed bottom-3 rounded-lg left-1/2 -translate-x-1/2 right-0 w-fit bg-background border border-white/5 text-white p-4 flex justify-between items-center z-50 flex-col gap-y-3">
