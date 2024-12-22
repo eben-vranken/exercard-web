@@ -59,7 +59,7 @@ export default function CookieConsentModal() {
     if (!isOpen) return null;
 
     return (
-        <section className="fixed bottom-3 rounded-lg left-1/2 -translate-x-1/2 right-0 w-fit bg-gray-800 text-white p-4 flex justify-between items-center z-50 flex-col gap-y-3">
+        <section className="fixed bottom-3 rounded-lg left-1/2 -translate-x-1/2 right-0 w-fit bg-background border border-white/5 text-white p-4 flex justify-between items-center z-50 flex-col gap-y-3">
             <p className="text-sm text-light">
                 This site uses cookies to improve your experience. By accepting, you allow Google Analytics to track your activity.
             </p>
