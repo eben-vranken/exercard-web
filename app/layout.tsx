@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/UI/Navbar";
-import dynamic from 'next/dynamic';
-
-const CookieConsentModal = dynamic(() => import('@/components/UI/CookiesModal'), { ssr: false });
+import ClientWrapper from "@/components/UI/ClientCookiesModalWrapper";
 
 const inter = localFont({
   src: "./fonts/Inter.ttf",
@@ -38,11 +36,10 @@ export default function RootLayout({
       >
         <section className="w-full md:w-2/3 lg:w-1/2 2xl:w-1/3">
           <Navbar />
-
           {children}
-        </section>
 
-        <CookieConsentModal />
+          <ClientWrapper />
+        </section>
       </body>
     </html>
   );
