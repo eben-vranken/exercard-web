@@ -17,6 +17,15 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
+.blogpost video {
+  margin: 20px 0px;
+}
+
+.blogpost figcaption {
+  font-size: 0.8rem;
+  color: var(--text-ultralight);
+}
+
 /*            */
 /* Animations */
 /*            */

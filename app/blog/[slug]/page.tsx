@@ -21,7 +21,7 @@ const PostPage: React.FC<PostPageProps> = async ({ params }) => {
     }
 
     return (
-        <main className="w-full mt-[2.5%] h-full flex flex-col gap-y-4 relative">
+        <main className="w-full mt-[2.5%] h-full flex flex-col gap-y-4 relative blogpost">
             <article>
                 <h1 className="font-bold text-3xl">{post.title}</h1>
                 <p className="text-sm text-ultralight mb-2">{post.date}</p>
