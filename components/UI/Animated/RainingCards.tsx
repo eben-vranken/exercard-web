@@ -1,23 +1,19 @@
-'use client';
-
-import { Cards } from "@phosphor-icons/react";
+import { Cards } from "@phosphor-icons/react/dist/ssr";
 
 interface RainingCardsProps {
     cardCount: number;
+    cards: {
+        id: number;
+        position: {
+            top: string;
+            left: string;
+        };
+        animationDelay: string;
+        animationDuration: string;
+    }[];
 }
 
-const RainingCards: React.FC<RainingCardsProps> = ({ cardCount }) => {
-    // Generate an array of the required number of cards with random positions
-    const cards = Array.from({ length: cardCount }, (_, index) => ({
-        id: index,
-        position: {
-            top: `${Math.random() * -10}vh`,  // Random vertical position
-            left: `${Math.random() * 100}vw`, // Random horizontal position
-        },
-        animationDelay: `${Math.random() * 5}s`, // Random animation delay for variety
-        animationDuration: `${Math.random() * (12 - 8) + 8}s`, // Random animation duration between 8s and 12s
-    }));
-
+const RainingCards: React.FC<RainingCardsProps> = ({ cardCount, cards }) => {
     return (
         <section className="absolute inset-0 w-full h-full z-[-10] pointer-events-none rain-cards">
             {cards.map(({ id, position, animationDelay, animationDuration }) => (
@@ -35,6 +31,18 @@ const RainingCards: React.FC<RainingCardsProps> = ({ cardCount }) => {
             ))}
         </section>
     );
+};
+
+export const generateCards = (cardCount: number) => {
+    return Array.from({ length: cardCount }, (_, index) => ({
+        id: index,
+        position: {
+            top: `${Math.random() * -10}vh`,
+            left: `${Math.random() * 100}vw`,
+        },
+        animationDelay: `${Math.random() * 5}s`,
+        animationDuration: `${Math.random() * (12 - 8) + 8}s`,
+    }));
 };
 
 export default RainingCards;
