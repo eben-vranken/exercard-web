@@ -13,15 +13,15 @@ export default async function Home() {
     <section className="w-full min-h-screen flex items-center flex-col">
       {/* Links */}
       <section className="w-full flex gap-x-4 mt-4 text-white">
-        <Link href="https://www.github.com/eben-vranken/exercard" target="_blank" className="flex items-center gap-x-2 rounded bg-[#2b3137] p-2 font-semibold">
+        <Link href="https://www.github.com/eben-vranken/exercard" target="_blank" className="flex items-center gap-x-2 rounded bg-[#2b3137] p-2">
           <GithubLogo size={20} weight="bold" />
           Github
         </Link>
-        <Link href="https://www.reddit.com/u/exercard" target="_blank" className="flex items-center gap-x-2 rounded bg-[#FF5700] p-2 font-semibold">
+        <Link href="https://www.reddit.com/u/exercard" target="_blank" className="flex items-center gap-x-2 rounded bg-[#FF5700] p-2">
           <RedditLogo size={20} weight="bold" />
           Reddit
         </Link>
-        <Link href="https://www.twitter.com/exercard" target="_blank" className="flex items-center gap-x-2 rounded bg-[#1DA1F2] p-2 font-semibold">
+        <Link href="https://www.twitter.com/exercard" target="_blank" className="flex items-center gap-x-2 rounded bg-[#1DA1F2] p-2">
           <TwitterLogo size={20} weight="bold" />
           Twitter
         </Link>
