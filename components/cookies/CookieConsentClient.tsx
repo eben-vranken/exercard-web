@@ -43,7 +43,9 @@ export default function CookieConsentClient({ analyticsToken, accepted }: Cookie
         if (analyticsToken) {
             window[`ga-disable-${analyticsToken}`] = false;
             ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+            console.log("Google Analytics enabled")
         }
+
     };
 
     const disableGoogleAnalytics = () => {
@@ -55,7 +57,7 @@ export default function CookieConsentClient({ analyticsToken, accepted }: Cookie
     return (
         <section className={`fixed bottom-3 rounded-lg left-1/2 -translate-x-1/2 right-0 w-fit bg-background border border-white/5 text-white p-4 flex justify-between items-center z-50 flex-col gap-y-3 ${accepted ? 'hidden' : 'flex'}`}>
             <p className="text-sm text-light">
-                This site uses cookies to improve your experience. By accepting, you allow Google Analytics to track your activity.
+                By accepting, you allow Google Analytics to track your activity.
             </p>
             <section className="flex gap-x-4">
                 <button onClick={handleAccept} className="bg-green-500 text-white px-4 py-2 rounded">
