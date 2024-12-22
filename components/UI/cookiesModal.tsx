@@ -16,7 +16,7 @@ export default function CookieConsentModal() {
         const token = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TOKEN;
 
         if (token) {
-            window[`ga-disable-${token}`] = true; // Prevent tracking initially
+            window[`ga-disable-${token}`] = true;
             ReactGA.initialize(token);
         }
 
@@ -46,7 +46,7 @@ export default function CookieConsentModal() {
     const enableGoogleAnalytics = () => {
         const token = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TOKEN;
         if (token) {
-            window[`ga-disable-${token}`] = false; // Re-enable tracking
+            window[`ga-disable-${token}`] = false;
             ReactGA.send({ hitType: "pageview", page: window.location.pathname });
         }
     };

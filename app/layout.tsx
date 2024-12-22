@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/UI/Navbar";
-import CookieConsentModal from "@/components/UI/CookiesModal";
+import ClientCookieConsent from "@/components/UI/ClientCookieConsent";
 
 const inter = localFont({
   src: "./fonts/Inter.ttf",
@@ -40,7 +40,7 @@ export default function RootLayout({
           {children}
         </section>
 
-        <CookieConsentModal />
+        <ClientCookieConsent />
       </body>
     </html>
   );
