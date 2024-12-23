@@ -21,7 +21,7 @@ const BlogPostPreview: React.FC<{ post: BlogPost }> = ({ post }) => {
             </header>
             <p className="text-light">{post.excerpt}</p>
             <time className="text-sm text-ultralight" dateTime={post.date}>
-                {new Date(post.date).toLocaleDateString()}
+                {new Date(post.date.split('-').reverse().join('-')).toLocaleDateString()}
             </time>
         </article>
     );
