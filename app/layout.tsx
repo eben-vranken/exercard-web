@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import CookieConsent from "@/components/cookies/CookieConsent";
+import NavbarWrapper from "@/components/UI/NavbarWrapper";
+import CookieConsentWrapper from "@/components/cookies/CookieConsentWrapper";
 
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -42,10 +42,10 @@ export default function RootLayout({
       <body
         className={`${inconsolata.variable} absolute left-1/2 -translate-x-1/2 flex w-full md:w-2/3 lg:w-1/2 2xl:w-1/3 flex-col items-center antialiased h-screen p-5`}
       >
-        <Navbar />
+        <NavbarWrapper />
         {children}
 
-        <CookieConsent />
+        <CookieConsentWrapper />
       </body>
     </html>
   );
