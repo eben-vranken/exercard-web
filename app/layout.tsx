@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-const Navbar = dynamic(() => import("@/components/UI/Navbar"), { ssr: false });
+import Navbar from "@/components/Navbar";
 import CookieConsent from "@/components/cookies/CookieConsent";
-import dynamic from "next/dynamic";
+
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const inter = localFont({
