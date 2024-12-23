@@ -42,7 +42,7 @@ export default async function Home() {
             <h1>How Spaced Repetition Works</h1>
           </header>
           <p className="text-light">
-            The spacing effect suggests that memory retention improves when learning is spaced out over time. Instead of cramming, periodic reviews strengthen long-term memory by taking advantage of the brain's ability to retain information when revisited. Spaced repetition systems use algorithms to adjust review schedules based on recall, with longer intervals for easy material and shorter ones for harder content. This optimizes retention and minimizes unnecessary review.          </p>
+            The spacing effect suggests that memory retention improves when learning is spaced out over time. Instead of cramming, periodic reviews strengthen long-term memory by taking advantage of the brain&apos;s ability to retain information when revisited. Spaced repetition systems use algorithms to adjust review schedules based on recall, with longer intervals for easy material and shorter ones for harder content. This optimizes retention and minimizes unnecessary review.          </p>
         </section>
         <figure className="w-3/4">
           <Image src={the_spacing_effect} alt="Spacing Effect" className="border border-white/10 rounded-xl" />
