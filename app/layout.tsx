@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inconsolata.variable} absolute left-1/2 -translate-x-1/2 flex w-full md:w-2/3 lg:w-1/2 2xl:w-1/3 flex-col items-center antialiased h-screen p-5`}
+        className={`${inconsolata.variable} absolute left-1/2 -translate-x-1/2 flex w-full md:w-2/3 lg:w-1/2 2xl:w-1/3 flex-col items-center antialiased min-h-screen p-5`}
       >
         <NavbarWrapper />
         {children}
