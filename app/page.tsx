@@ -1,13 +1,8 @@
-import { readFileSync } from "fs";
-import { join } from "path";
 import Link from "next/link";
 import exercard_review from "public/screenshots/exercard_review.png";
 import Image from "next/image";
 
 export default async function Home() {
-  const filePath = join(process.cwd(), "data", "blogposts.json");
-  const fileContents = readFileSync(filePath, "utf-8");
-  const posts = JSON.parse(fileContents);
 
   return (
     <main className="w-full min-h-screen flex flex-col">
