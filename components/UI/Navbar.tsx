@@ -1,7 +1,17 @@
+'use client';
+
 import { GithubLogo, RedditLogo, Stack, TwitterLogo } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navLinks = {
+    '/': 'Home',
+    '/blog': 'Blog',
+}
 
 const Navbar: React.FC = () => {
+    const pathname = usePathname();
+
     return (
         <nav className="flex flex-col text-left w-full">
             <Link href={'/'} className="flex gap-x-4 cursor-pointer">
@@ -16,8 +26,11 @@ const Navbar: React.FC = () => {
             <section className="flex items-center justify-between w-full">
                 {/* Navigation */}
                 <section className="flex gap-x-4">
-                    <Link href={'/'} className="hover:text-light">Home</Link>
-                    <Link href={'/blog'} className="hover:text-light">Blog</Link>
+                    {Object.entries(navLinks).map(([link, title]) => (
+                        <Link href={link} key={link} className={`cursor-pointer ${pathname === link ? 'underline' : ''}`}>
+                            {title}
+                        </Link>
+                    ))}
                 </section>
 
                 {/* Github & Socials */}

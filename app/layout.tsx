@@ -10,6 +10,12 @@ const inter = localFont({
   weight: "100 200 300 400 500 600 700 800 900",
 });
 
+const inconsolata = localFont({
+  src: "./fonts/Inconsolata.ttf",
+  variable: "--font-inconsolata",
+  weight: "200 300 400 500 600 700 800 900",
+});
+
 export const metadata: Metadata = {
   title: "Exercard - Open-Source SRS Flashcards with Local AI",
   description: "Open-Source SRS flashcards with local AI, free, forever.",
@@ -32,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} absolute left-1/2 -translate-x-1/2 flex w-full md:w-2/3 lg:w-1/2 2xl:w-1/3 flex-col items-center antialiased h-screen p-5`}
+        className={`${inconsolata.variable} absolute left-1/2 -translate-x-1/2 flex w-full md:w-2/3 lg:w-1/2 2xl:w-1/3 flex-col items-center antialiased h-screen p-5`}
       >
         <Navbar />
         {children}

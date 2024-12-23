@@ -12,9 +12,6 @@ const BlogPostList: React.FC<BlogPostListProps> = ({ posts }) => {
 
     return (
         <section className="w-full">
-            <header>
-                <h1>Blog Posts</h1>
-            </header>
             <section className="space-y-6">
                 {posts.map((post) => (
                     <article key={post.id}>
