@@ -4,13 +4,11 @@ import "./globals.css";
 import NavbarWrapper from "@/components/UI/NavbarWrapper";
 import CookieConsentWrapper from "@/components/cookies/CookieConsentWrapper";
 
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const inter = localFont({
-  src: "./fonts/Inter.ttf",
-  variable: "--font-inter",
-  weight: "100 200 300 400 500 600 700 800 900",
-});
+// const inter = localFont({
+//   src: "./fonts/Inter.ttf",
+//   variable: "--font-inter",
+//   weight: "100 200 300 400 500 600 700 800 900",
+// });
 
 const inconsolata = localFont({
   src: "./fonts/Inconsolata.ttf",
