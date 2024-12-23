@@ -28,7 +28,7 @@ export default async function Home() {
             <h1>The Forgetting Curve</h1>
           </header>
           <p className="text-light">
-            The forgetting curve is a concept that illustrates how information fades from memory over time. Initially, we forget rapidly, but the rate of forgetting slows down as time passes. Without reinforcement, most new information is lost within hours or days. However, reviewing material at strategic intervals can slow down this decline, helping to retain knowledge for longer periods. The curve highlights the importance of regular review to combat forgetting and strengthen memory retention over time.          </p>
+            The forgetting curve is a concept that illustrates how information fades from memory over time. Initially, we forget rapidly, but the rate of forgetting slows down as time passes. Without reinforcement, most new information is lost within hours or days. However, reviewing material at strategic intervals can slow down this decline, helping to retain knowledge for longer periods.</p>
         </section>
         <figure className="w-3/4 text-right">
           <Image src={the_forgetting_curve} alt="Spacing Effect" className="border border-white/10 rounded-xl" />
