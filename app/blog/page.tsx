@@ -8,7 +8,7 @@ export default async function Blog() {
     const fileContents = readFileSync(filePath, "utf-8");
     const posts = JSON.parse(fileContents);
 
-    return <section className="w-full flex-1 overflow-y-auto">
+    return <main className="w-full flex-1 overflow-y-auto">
         <BlogPostList posts={posts} />
-    </section>
+    </main>
 };

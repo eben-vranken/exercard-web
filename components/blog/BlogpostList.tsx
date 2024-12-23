@@ -12,9 +12,14 @@ const BlogPostList: React.FC<BlogPostListProps> = ({ posts }) => {
 
     return (
         <section className="w-full">
+            <header>
+                <h1>Blog Posts</h1>
+            </header>
             <section className="space-y-6">
                 {posts.map((post) => (
-                    <BlogPostPreview key={post.id} post={post} />
+                    <article key={post.id}>
+                        <BlogPostPreview post={post} />
+                    </article>
                 ))}
             </section>
         </section>
