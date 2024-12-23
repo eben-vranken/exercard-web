@@ -28,7 +28,7 @@ export default async function Home() {
             <h1>The Forgetting Curve</h1>
           </header>
           <p className="text-light">
-            The forgetting curve is a concept that illustrates how information fades from memory over time. Initially, we forget rapidly, but the rate of forgetting slows down as time passes. Without reinforcement, most new information is lost within hours or days. However, reviewing material at strategic intervals can slow down this decline, helping to retain knowledge for longer periods.</p>
+            The <Link href={'https://en.wikipedia.org/wiki/Forgetting_curve'} target="_blank" className="text-blue-600">forgetting curve</Link> is a concept that illustrates how information fades from memory over time. Initially, we forget rapidly, but the rate of forgetting slows down as time passes. Without reinforcement, most new information is lost within hours or days. However, reviewing material at strategic intervals can slow down this decline, helping to retain knowledge for longer periods.</p>
         </section>
         <figure className="w-3/4 flex flex-col text-right">
           <Image src={the_forgetting_curve} alt="Spacing Effect" className="border border-white/10 rounded-xl" />
@@ -43,7 +43,7 @@ export default async function Home() {
             <h1>How Spaced Repetition Works</h1>
           </header>
           <p className="text-light">
-            The spacing effect suggests that memory retention improves when learning is spaced out over time. Instead of cramming, periodic reviews strengthen long-term memory by taking advantage of the brain&apos;s ability to retain information when revisited. Spaced repetition systems use algorithms to adjust review schedules based on recall, with longer intervals for easy material and shorter ones for harder content. This optimizes retention and minimizes unnecessary review.          </p>
+            The <Link href={'https://en.wikipedia.org/wiki/Spacing_effect'} target="_blank" className="text-blue-600">spacing effect</Link> suggests that memory retention improves when learning is spaced out over time. Instead of cramming, periodic reviews strengthen long-term memory by taking advantage of the brain&apos;s ability to retain information when revisited. <Link href={'https://en.wikipedia.org/wiki/Spaced_repetition'} target="_blank" className="text-blue-600">Spaced repetition</Link> systems use algorithms to adjust review schedules based on recall, with longer intervals for easy material and shorter ones for harder content. This optimizes retention and minimizes unnecessary review.          </p>
         </section>
         <figure className="w-3/4">
           <Image src={the_spacing_effect} alt="Spacing Effect" className="border border-white/10 rounded-xl" />
