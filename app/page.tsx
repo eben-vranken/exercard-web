@@ -8,7 +8,7 @@ export default async function Home() {
 
   return (
     <main className="w-full min-h-screen flex flex-col gap-y-10">
-      <article className="flex flex-col gap-y-4 text-center mb-10">
+      <article className="flex flex-col gap-y-4 text-center my-10">
         <section>
           <header>
             <h1 className="font-bold text-xl">What is Exercard?</h1>
