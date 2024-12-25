@@ -24,10 +24,10 @@ const PostPage: React.FC<PostPageProps> = async ({ params }) => {
         <main className="w-full mt-[2.5%] h-full flex flex-col gap-y-4 relative blogpost">
             <article>
                 <header>
-                    <h1 className="font-bold text-3xl">{post.title}</h1>
-                    <p className="text-sm text-ultralight mb-2">{post.date}</p>
+                    <h1 className="font-bold text-3xl text-main">{post.title}</h1>
+                    <p className="text-sm text-light mb-2">{post.date}</p>
                 </header>
-                <section className="blog-content text-lg text-light flex flex-col">
+                <section className="blog-content text-lg flex flex-col">
                     <section
                         dangerouslySetInnerHTML={{ __html: post.content }}
                         className="flex flex-col"
