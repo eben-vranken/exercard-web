@@ -18,7 +18,20 @@ const inconsolata = localFont({
 
 export const metadata: Metadata = {
   title: "Exercard - Open-Source SRS Flashcards with Local AI",
-  description: "Open-Source SRS flashcards with local AI, free, forever.",
+  description: "Exercard is an open-source SRS flashcard app featuring local AI, designed for efficient learning and privacy. Free, forever.",
+  keywords: [
+    "flashcards",
+    "open-source",
+    "srs",
+    "spaced repetition",
+    "ai",
+    "artificial intelligence",
+    "local",
+    "free",
+    "privacy",
+    "exercard"
+  ],
+  authors: [{ name: "Eben Vranken", url: "https://www.github.com/eben-vranken" }],
 };
 
 export interface BlogPost {
