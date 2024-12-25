@@ -21,6 +21,7 @@ module.exports = {
     return [
       {
         loc: '/blog/',
+        loc: '/science',
         lastmod: new Date().toISOString(),
       },
       ...blogPostPaths,
