@@ -6,5 +6,13 @@
         "date": "22-12-2024",
         "slug": "hello-world",
         "excerpt": "Who, What, Why. Merry Christmas 🎄🎁"
+    },
+    {
+        "id": "2",
+        "title": "Creating the reviewing process",
+        "content": "<p>With the last sprint of the 2024 coming to its end. I'm very glad with the progress I've made. 😊<br><br>The previous sprint was mainly about creating decks and creating cards, but that was about it. Not very interesting for the user. This sprint included a lot more main ideas. 💡<ul><li>Implement SM-2 as the first SRS algorithm<li>Create front-end functionality for reviewing cards<li>Beautify the reviewing process using animations and styling<li>Create SSR blog (Which you are reading now!📝)</li></ul>At first I wanted to implement FSRS as the first algorithm, since I find it to be a much more modern alternative, but I ran into a lot of trouble actually understanding it (mainly the mathematical side) and after a couple of days concluded that for now I will implement SM-2 and before the alpha release of Exercard, dedicate an entire sprint to also including FSRS and turning it into the default algorithm used. (While still leaving SM-2 so that users can decide which algorithm they use)<br><br>Besides that, I'm very glad with how everything turned out.<br><br>I wish you all a happy 2025, I will see you next year<br><br>Eben</p>",
+        "date": "22-12-2024",
+        "slug": "creating-the-reviewing-cycle",
+        "excerpt": "Review of sprint cycle 2"
     }
 ]
