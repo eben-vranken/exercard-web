@@ -1,3 +1,5 @@
+Exercard aims to be a free and open-source equivalent of popular flashcard applications with local AI integrations.
+
 This is a the [Next.js](https://nextjs.org) project bootstrapped with [`Exercard`](https://www.exercard.com).
 
 ## Getting Started
