@@ -11,7 +11,7 @@
         "id": "2",
         "title": "Creating the reviewing process",
         "content": "<p>As the final sprint of 2024 comes to a close, I'm feeling incredibly proud of the progress I've made. 😊<p>The previous sprint was focused mainly on creating decks and cards—important, but not very exciting for the user. This sprint, however, has brought a lot more core functionality and meaningful updates. 💡<ul><li>Implemented SM-2 as the first spaced repetition algorithm<li>Created front-end & back-end functionality for reviewing cards<li>Enhanced the reviewing process with animations and styling<li>Launched an SSR blog (which you're reading right now! 📝)</ul><p>Initially, I had planned to implement FSRS as the first algorithm since I find it to be a modern and promising alternative. However, I encountered significant challenges in understanding its mathematical foundations. After a few days of struggling, I decided to implement SM-2 for now and dedicate an entire sprint before the alpha release of Exercard to fully integrate FSRS. FSRS will become the default algorithm, but users will still have the option to choose SM-2 if they prefer.<p>Overall, I'm very happy with how everything turned out this sprint. It's been an exciting time of development, and I'm thrilled about the direction Exercard is headed in.<p>Wishing you all a happy 2025! I look forward to seeing you next year.<p>Best,<br>Eben</p>",
-        "date": "22-12-2024",
+        "date": "28-12-2024",
         "slug": "creating-the-reviewing-cycle",
         "excerpt": "Review of sprint cycle 2"
     }
