@@ -30,7 +30,7 @@ const PostPage: React.FC<PostPageProps> = async ({ params }) => {
                 <section className="blog-content text-lg flex flex-col">
                     <section
                         dangerouslySetInnerHTML={{ __html: post.content }}
-                        className="flex flex-col [&>ul]:my-5 [&>ul]:list-disc [&>ul>li]:ml-5"
+                        className="flex flex-col [&>ul]:my-5 [&>ul]:list-disc [&>ul>li]:ml-5 [&>p]:my-2"
                     />
                 </section>
             </article>
