@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
             <p className="text-light mt-2 text-sm">
                 Free & Open-source SRS flashcards with local AI-integration.
             </p>
-
+<span>Happy New year!</span>
 
             <section className="flex items-center justify-between w-full">
                 {/* Navigation */}
