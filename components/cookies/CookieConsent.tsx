@@ -55,7 +55,7 @@ export default function CookieConsent({ analyticsToken, accepted }: CookieConsen
     };
 
     return (
-        <section className={`fixed bottom-3 rounded-lg left-1/2 -translate-x-1/2 right-0 w-fit bg-background border border-white/5 text-white p-4 flex justify-between items-center z-50 flex-col gap-y-3 ${accepted ? 'hidden' : 'flex'}`}>
+        <section className={`sticky bottom-3 rounded-lg left-1/2 -translate-x-1/2 right-0 w-fit bg-background border border-white/5 text-white p-4 flex justify-between items-center z-50 flex-col gap-y-3 ${accepted ? 'hidden' : 'flex'}`}>
             <p className="text-sm text-light">
                 By accepting, you allow Google Analytics to track your activity.
             </p>
